@@ -1,7 +1,1553 @@
+
 <html>
 <head>
-<title>Samples from all BigGAN categories</title>
+  <title>Samples from all BigGAN categories</title>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .vega-actions a {
+      padding: 0.2em;
+    }
+  </style>
 </head>
 <body>
-<img src="https://drive.google.com/uc?export=view&id=1Pyk0PRJ_rMQXHvvvIo6SMnuiAglNnrXJ" style="width: 500px; max-width: 100%; height: auto"" />
+  <script>
+    function changeImages(elem) {
+      var drive_path = 'https://drive.google.com/uc?export=view&id=';
+      var category = elem.value;
+      var json_path = 'https://psc-g.github.io/ganterpretation/json/' + category + '.json';
+      $.getJSON(json_path, function(json) {
+        document.getElementById('title').innerHTML = json.name;
+        document.getElementById('sample1').src = drive_path + json.sample1;
+        document.getElementById('sample2').src = drive_path + json.sample2;
+        document.getElementById('sample3').src = drive_path + json.sample3;
+      })
+    }
+  </script>
+  <select id="category" name="category_select" onchange="changeImages(this)">
+
+    <option value="0">tench, Tinca tinca</option>
+
+    <option value="1">goldfish, Carassius auratus</option>
+
+    <option value="2">great white shark, white shark, man-eater, man-eating shark, Carcharodon carcharias</option>
+
+    <option value="3">tiger shark, Galeocerdo cuvieri</option>
+
+    <option value="4">hammerhead, hammerhead shark</option>
+
+    <option value="5">electric ray, crampfish, numbfish, torpedo</option>
+
+    <option value="6">stingray</option>
+
+    <option value="7">cock</option>
+
+    <option value="8">hen</option>
+
+    <option value="9">ostrich, Struthio camelus</option>
+
+    <option value="10">brambling, Fringilla montifringilla</option>
+
+    <option value="11">goldfinch, Carduelis carduelis</option>
+
+    <option value="12">house finch, linnet, Carpodacus mexicanus</option>
+
+    <option value="13">junco, snowbird</option>
+
+    <option value="14">indigo bunting, indigo finch, indigo bird, Passerina cyanea</option>
+
+    <option value="15">robin, American robin, Turdus migratorius</option>
+
+    <option value="16">bulbul</option>
+
+    <option value="17">jay</option>
+
+    <option value="18">magpie</option>
+
+    <option value="19">chickadee</option>
+
+    <option value="20">water ouzel, dipper</option>
+
+    <option value="21">kite</option>
+
+    <option value="22">bald eagle, American eagle, Haliaeetus leucocephalus</option>
+
+    <option value="23">vulture</option>
+
+    <option value="24">great grey owl, great gray owl, Strix nebulosa</option>
+
+    <option value="25">European fire salamander, Salamandra salamandra</option>
+
+    <option value="26">common newt, Triturus vulgaris</option>
+
+    <option value="27">eft</option>
+
+    <option value="28">spotted salamander, Ambystoma maculatum</option>
+
+    <option value="29">axolotl, mud puppy, Ambystoma mexicanum</option>
+
+    <option value="30">bullfrog, Rana catesbeiana</option>
+
+    <option value="31">tree frog, tree-frog</option>
+
+    <option value="32">tailed frog, bell toad, ribbed toad, tailed toad, Ascaphus trui</option>
+
+    <option value="33">loggerhead, loggerhead turtle, Caretta caretta</option>
+
+    <option value="34">leatherback turtle, leatherback, leathery turtle, Dermochelys coriacea</option>
+
+    <option value="35">mud turtle</option>
+
+    <option value="36">terrapin</option>
+
+    <option value="37">box turtle, box tortoise</option>
+
+    <option value="38">banded gecko</option>
+
+    <option value="39">common iguana, iguana, Iguana iguana</option>
+
+    <option value="40">American chameleon, anole, Anolis carolinensis</option>
+
+    <option value="41">whiptail, whiptail lizard</option>
+
+    <option value="42">agama</option>
+
+    <option value="43">frilled lizard, Chlamydosaurus kingi</option>
+
+    <option value="44">alligator lizard</option>
+
+    <option value="45">Gila monster, Heloderma suspectum</option>
+
+    <option value="46">green lizard, Lacerta viridis</option>
+
+    <option value="47">African chameleon, Chamaeleo chamaeleon</option>
+
+    <option value="48">Komodo dragon, Komodo lizard, dragon lizard, giant lizard, Varanus komodoensis</option>
+
+    <option value="49">African crocodile, Nile crocodile, Crocodylus niloticus</option>
+
+    <option value="50">American alligator, Alligator mississipiensis</option>
+
+    <option value="51">triceratops</option>
+
+    <option value="52">thunder snake, worm snake, Carphophis amoenus</option>
+
+    <option value="53">ringneck snake, ring-necked snake, ring snake</option>
+
+    <option value="54">hognose snake, puff adder, sand viper</option>
+
+    <option value="55">green snake, grass snake</option>
+
+    <option value="56">king snake, kingsnake</option>
+
+    <option value="57">garter snake, grass snake</option>
+
+    <option value="58">water snake</option>
+
+    <option value="59">vine snake</option>
+
+    <option value="60">night snake, Hypsiglena torquata</option>
+
+    <option value="61">boa constrictor, Constrictor constrictor</option>
+
+    <option value="62">rock python, rock snake, Python sebae</option>
+
+    <option value="63">Indian cobra, Naja naja</option>
+
+    <option value="64">green mamba</option>
+
+    <option value="65">sea snake</option>
+
+    <option value="66">horned viper, cerastes, sand viper, horned asp, Cerastes cornutus</option>
+
+    <option value="67">diamondback, diamondback rattlesnake, Crotalus adamanteus</option>
+
+    <option value="68">sidewinder, horned rattlesnake, Crotalus cerastes</option>
+
+    <option value="69">trilobite</option>
+
+    <option value="70">harvestman, daddy longlegs, Phalangium opilio</option>
+
+    <option value="71">scorpion</option>
+
+    <option value="72">black and gold garden spider, Argiope aurantia</option>
+
+    <option value="73">barn spider, Araneus cavaticus</option>
+
+    <option value="74">garden spider, Aranea diademata</option>
+
+    <option value="75">black widow, Latrodectus mactans</option>
+
+    <option value="76">tarantula</option>
+
+    <option value="77">wolf spider, hunting spider</option>
+
+    <option value="78">tick</option>
+
+    <option value="79">centipede</option>
+
+    <option value="80">black grouse</option>
+
+    <option value="81">ptarmigan</option>
+
+    <option value="82">ruffed grouse, partridge, Bonasa umbellus</option>
+
+    <option value="83">prairie chicken, prairie grouse, prairie fowl</option>
+
+    <option value="84">peacock</option>
+
+    <option value="85">quail</option>
+
+    <option value="86">partridge</option>
+
+    <option value="87">African grey, African gray, Psittacus erithacus</option>
+
+    <option value="88">macaw</option>
+
+    <option value="89">sulphur-crested cockatoo, Kakatoe galerita, Cacatua galerita</option>
+
+    <option value="90">lorikeet</option>
+
+    <option value="91">coucal</option>
+
+    <option value="92">bee eater</option>
+
+    <option value="93">hornbill</option>
+
+    <option value="94">hummingbird</option>
+
+    <option value="95">jacamar</option>
+
+    <option value="96">toucan</option>
+
+    <option value="97">drake</option>
+
+    <option value="98">red-breasted merganser, Mergus serrator</option>
+
+    <option value="99">goose</option>
+
+    <option value="100">black swan, Cygnus atratus</option>
+
+    <option value="101">tusker</option>
+
+    <option value="102">echidna, spiny anteater, anteater</option>
+
+    <option value="103">platypus, duckbill, duckbilled platypus, duck-billed platypus, Ornithorhynchus anatinus</option>
+
+    <option value="104">wallaby, brush kangaroo</option>
+
+    <option value="105">koala, koala bear, kangaroo bear, native bear, Phascolarctos cinereus</option>
+
+    <option value="106">wombat</option>
+
+    <option value="107">jellyfish</option>
+
+    <option value="108">sea anemone, anemone</option>
+
+    <option value="109">brain coral</option>
+
+    <option value="110">flatworm, platyhelminth</option>
+
+    <option value="111">nematode, nematode worm, roundworm</option>
+
+    <option value="112">conch</option>
+
+    <option value="113">snail</option>
+
+    <option value="114">slug</option>
+
+    <option value="115">sea slug, nudibranch</option>
+
+    <option value="116">chiton, coat-of-mail shell, sea cradle, polyplacophore</option>
+
+    <option value="117">chambered nautilus, pearly nautilus, nautilus</option>
+
+    <option value="118">Dungeness crab, Cancer magister</option>
+
+    <option value="119">rock crab, Cancer irroratus</option>
+
+    <option value="120">fiddler crab</option>
+
+    <option value="121">king crab, Alaska crab, Alaskan king crab, Alaska king crab, Paralithodes camtschatica</option>
+
+    <option value="122">American lobster, Northern lobster, Maine lobster, Homarus americanus</option>
+
+    <option value="123">spiny lobster, langouste, rock lobster, crawfish, crayfish, sea crawfish</option>
+
+    <option value="124">crayfish, crawfish, crawdad, crawdaddy</option>
+
+    <option value="125">hermit crab</option>
+
+    <option value="126">isopod</option>
+
+    <option value="127">white stork, Ciconia ciconia</option>
+
+    <option value="128">black stork, Ciconia nigra</option>
+
+    <option value="129">spoonbill</option>
+
+    <option value="130">flamingo</option>
+
+    <option value="131">little blue heron, Egretta caerulea</option>
+
+    <option value="132">American egret, great white heron, Egretta albus</option>
+
+    <option value="133">bittern</option>
+
+    <option value="134">crane</option>
+
+    <option value="135">limpkin, Aramus pictus</option>
+
+    <option value="136">European gallinule, Porphyrio porphyrio</option>
+
+    <option value="137">American coot, marsh hen, mud hen, water hen, Fulica americana</option>
+
+    <option value="138">bustard</option>
+
+    <option value="139">ruddy turnstone, Arenaria interpres</option>
+
+    <option value="140">red-backed sandpiper, dunlin, Erolia alpina</option>
+
+    <option value="141">redshank, Tringa totanus</option>
+
+    <option value="142">dowitcher</option>
+
+    <option value="143">oystercatcher, oyster catcher</option>
+
+    <option value="144">pelican</option>
+
+    <option value="145">king penguin, Aptenodytes patagonica</option>
+
+    <option value="146">albatross, mollymawk</option>
+
+    <option value="147">grey whale, gray whale, devilfish, Eschrichtius gibbosus, Eschrichtius robustus</option>
+
+    <option value="148">killer whale, killer, orca, grampus, sea wolf, Orcinus orca</option>
+
+    <option value="149">dugong, Dugong dugon</option>
+
+    <option value="150">sea lion</option>
+
+    <option value="151">Chihuahua</option>
+
+    <option value="152">Japanese spaniel</option>
+
+    <option value="153">Maltese dog, Maltese terrier, Maltese</option>
+
+    <option value="154">Pekinese, Pekingese, Peke</option>
+
+    <option value="155">Shih-Tzu</option>
+
+    <option value="156">Blenheim spaniel</option>
+
+    <option value="157">papillon</option>
+
+    <option value="158">toy terrier</option>
+
+    <option value="159">Rhodesian ridgeback</option>
+
+    <option value="160">Afghan hound, Afghan</option>
+
+    <option value="161">basset, basset hound</option>
+
+    <option value="162">beagle</option>
+
+    <option value="163">bloodhound, sleuthhound</option>
+
+    <option value="164">bluetick</option>
+
+    <option value="165">black-and-tan coonhound</option>
+
+    <option value="166">Walker hound, Walker foxhound</option>
+
+    <option value="167">English foxhound</option>
+
+    <option value="168">redbone</option>
+
+    <option value="169">borzoi, Russian wolfhound</option>
+
+    <option value="170">Irish wolfhound</option>
+
+    <option value="171">Italian greyhound</option>
+
+    <option value="172">whippet</option>
+
+    <option value="173">Ibizan hound, Ibizan Podenco</option>
+
+    <option value="174">Norwegian elkhound, elkhound</option>
+
+    <option value="175">otterhound, otter hound</option>
+
+    <option value="176">Saluki, gazelle hound</option>
+
+    <option value="177">Scottish deerhound, deerhound</option>
+
+    <option value="178">Weimaraner</option>
+
+    <option value="179">Staffordshire bullterrier, Staffordshire bull terrier</option>
+
+    <option value="180">American Staffordshire terrier, Staffordshire terrier, American pit bull terrier, pit bull terrier</option>
+
+    <option value="181">Bedlington terrier</option>
+
+    <option value="182">Border terrier</option>
+
+    <option value="183">Kerry blue terrier</option>
+
+    <option value="184">Irish terrier</option>
+
+    <option value="185">Norfolk terrier</option>
+
+    <option value="186">Norwich terrier</option>
+
+    <option value="187">Yorkshire terrier</option>
+
+    <option value="188">wire-haired fox terrier</option>
+
+    <option value="189">Lakeland terrier</option>
+
+    <option value="190">Sealyham terrier, Sealyham</option>
+
+    <option value="191">Airedale, Airedale terrier</option>
+
+    <option value="192">cairn, cairn terrier</option>
+
+    <option value="193">Australian terrier</option>
+
+    <option value="194">Dandie Dinmont, Dandie Dinmont terrier</option>
+
+    <option value="195">Boston bull, Boston terrier</option>
+
+    <option value="196">miniature schnauzer</option>
+
+    <option value="197">giant schnauzer</option>
+
+    <option value="198">standard schnauzer</option>
+
+    <option value="199">Scotch terrier, Scottish terrier, Scottie</option>
+
+    <option value="200">Tibetan terrier, chrysanthemum dog</option>
+
+    <option value="201">silky terrier, Sydney silky</option>
+
+    <option value="202">soft-coated wheaten terrier</option>
+
+    <option value="203">West Highland white terrier</option>
+
+    <option value="204">Lhasa, Lhasa apso</option>
+
+    <option value="205">flat-coated retriever</option>
+
+    <option value="206">curly-coated retriever</option>
+
+    <option value="207">golden retriever</option>
+
+    <option value="208">Labrador retriever</option>
+
+    <option value="209">Chesapeake Bay retriever</option>
+
+    <option value="210">German short-haired pointer</option>
+
+    <option value="211">vizsla, Hungarian pointer</option>
+
+    <option value="212">English setter</option>
+
+    <option value="213">Irish setter, red setter</option>
+
+    <option value="214">Gordon setter</option>
+
+    <option value="215">Brittany spaniel</option>
+
+    <option value="216">clumber, clumber spaniel</option>
+
+    <option value="217">English springer, English springer spaniel</option>
+
+    <option value="218">Welsh springer spaniel</option>
+
+    <option value="219">cocker spaniel, English cocker spaniel, cocker</option>
+
+    <option value="220">Sussex spaniel</option>
+
+    <option value="221">Irish water spaniel</option>
+
+    <option value="222">kuvasz</option>
+
+    <option value="223">schipperke</option>
+
+    <option value="224">groenendael</option>
+
+    <option value="225">malinois</option>
+
+    <option value="226">briard</option>
+
+    <option value="227">kelpie</option>
+
+    <option value="228">komondor</option>
+
+    <option value="229">Old English sheepdog, bobtail</option>
+
+    <option value="230">Shetland sheepdog, Shetland sheep dog, Shetland</option>
+
+    <option value="231">collie</option>
+
+    <option value="232">Border collie</option>
+
+    <option value="233">Bouvier des Flandres, Bouviers des Flandres</option>
+
+    <option value="234">Rottweiler</option>
+
+    <option value="235">German shepherd, German shepherd dog, German police dog, alsatian</option>
+
+    <option value="236">Doberman, Doberman pinscher</option>
+
+    <option value="237">miniature pinscher</option>
+
+    <option value="238">Greater Swiss Mountain dog</option>
+
+    <option value="239">Bernese mountain dog</option>
+
+    <option value="240">Appenzeller</option>
+
+    <option value="241">EntleBucher</option>
+
+    <option value="242">boxer</option>
+
+    <option value="243">bull mastiff</option>
+
+    <option value="244">Tibetan mastiff</option>
+
+    <option value="245">French bulldog</option>
+
+    <option value="246">Great Dane</option>
+
+    <option value="247">Saint Bernard, St Bernard</option>
+
+    <option value="248">Eskimo dog, husky</option>
+
+    <option value="249">malamute, malemute, Alaskan malamute</option>
+
+    <option value="250">Siberian husky</option>
+
+    <option value="251">dalmatian, coach dog, carriage dog</option>
+
+    <option value="252">affenpinscher, monkey pinscher, monkey dog</option>
+
+    <option value="253">basenji</option>
+
+    <option value="254">pug, pug-dog</option>
+
+    <option value="255">Leonberg</option>
+
+    <option value="256">Newfoundland, Newfoundland dog</option>
+
+    <option value="257">Great Pyrenees</option>
+
+    <option value="258">Samoyed, Samoyede</option>
+
+    <option value="259">Pomeranian</option>
+
+    <option value="260">chow, chow chow</option>
+
+    <option value="261">keeshond</option>
+
+    <option value="262">Brabancon griffon</option>
+
+    <option value="263">Pembroke, Pembroke Welsh corgi</option>
+
+    <option value="264">Cardigan, Cardigan Welsh corgi</option>
+
+    <option value="265">toy poodle</option>
+
+    <option value="266">miniature poodle</option>
+
+    <option value="267">standard poodle</option>
+
+    <option value="268">Mexican hairless</option>
+
+    <option value="269">timber wolf, grey wolf, gray wolf, Canis lupus</option>
+
+    <option value="270">white wolf, Arctic wolf, Canis lupus tundrarum</option>
+
+    <option value="271">red wolf, maned wolf, Canis rufus, Canis niger</option>
+
+    <option value="272">coyote, prairie wolf, brush wolf, Canis latrans</option>
+
+    <option value="273">dingo, warrigal, warragal, Canis dingo</option>
+
+    <option value="274">dhole, Cuon alpinus</option>
+
+    <option value="275">African hunting dog, hyena dog, Cape hunting dog, Lycaon pictus</option>
+
+    <option value="276">hyena, hyaena</option>
+
+    <option value="277">red fox, Vulpes vulpes</option>
+
+    <option value="278">kit fox, Vulpes macrotis</option>
+
+    <option value="279">Arctic fox, white fox, Alopex lagopus</option>
+
+    <option value="280">grey fox, gray fox, Urocyon cinereoargenteus</option>
+
+    <option value="281">tabby, tabby cat</option>
+
+    <option value="282">tiger cat</option>
+
+    <option value="283">Persian cat</option>
+
+    <option value="284">Siamese cat, Siamese</option>
+
+    <option value="285">Egyptian cat</option>
+
+    <option value="286">cougar, puma, catamount, mountain lion, painter, panther, Felis concolor</option>
+
+    <option value="287">lynx, catamount</option>
+
+    <option value="288">leopard, Panthera pardus</option>
+
+    <option value="289">snow leopard, ounce, Panthera uncia</option>
+
+    <option value="290">jaguar, panther, Panthera onca, Felis onca</option>
+
+    <option value="291">lion, king of beasts, Panthera leo</option>
+
+    <option value="292">tiger, Panthera tigris</option>
+
+    <option value="293">cheetah, chetah, Acinonyx jubatus</option>
+
+    <option value="294">brown bear, bruin, Ursus arctos</option>
+
+    <option value="295">American black bear, black bear, Ursus americanus, Euarctos americanus</option>
+
+    <option value="296">ice bear, polar bear, Ursus Maritimus, Thalarctos maritimus</option>
+
+    <option value="297">sloth bear, Melursus ursinus, Ursus ursinus</option>
+
+    <option value="298">mongoose</option>
+
+    <option value="299">meerkat, mierkat</option>
+
+    <option value="300">tiger beetle</option>
+
+    <option value="301">ladybug, ladybeetle, lady beetle, ladybird, ladybird beetle</option>
+
+    <option value="302">ground beetle, carabid beetle</option>
+
+    <option value="303">long-horned beetle, longicorn, longicorn beetle</option>
+
+    <option value="304">leaf beetle, chrysomelid</option>
+
+    <option value="305">dung beetle</option>
+
+    <option value="306">rhinoceros beetle</option>
+
+    <option value="307">weevil</option>
+
+    <option value="308">fly</option>
+
+    <option value="309">bee</option>
+
+    <option value="310">ant, emmet, pismire</option>
+
+    <option value="311">grasshopper, hopper</option>
+
+    <option value="312">cricket</option>
+
+    <option value="313">walking stick, walkingstick, stick insect</option>
+
+    <option value="314">cockroach, roach</option>
+
+    <option value="315">mantis, mantid</option>
+
+    <option value="316">cicada, cicala</option>
+
+    <option value="317">leafhopper</option>
+
+    <option value="318">lacewing, lacewing fly</option>
+
+    <option value="319">dragonfly, darning needle, devil's darning needle, sewing needle, snake feeder, snake doctor, mosquito hawk, skeeter hawk</option>
+
+    <option value="320">damselfly</option>
+
+    <option value="321">admiral</option>
+
+    <option value="322">ringlet, ringlet butterfly</option>
+
+    <option value="323">monarch, monarch butterfly, milkweed butterfly, Danaus plexippus</option>
+
+    <option value="324">cabbage butterfly</option>
+
+    <option value="325">sulphur butterfly, sulfur butterfly</option>
+
+    <option value="326">lycaenid, lycaenid butterfly</option>
+
+    <option value="327">starfish, sea star</option>
+
+    <option value="328">sea urchin</option>
+
+    <option value="329">sea cucumber, holothurian</option>
+
+    <option value="330">wood rabbit, cottontail, cottontail rabbit</option>
+
+    <option value="331">hare</option>
+
+    <option value="332">Angora, Angora rabbit</option>
+
+    <option value="333">hamster</option>
+
+    <option value="334">porcupine, hedgehog</option>
+
+    <option value="335">fox squirrel, eastern fox squirrel, Sciurus niger</option>
+
+    <option value="336">marmot</option>
+
+    <option value="337">beaver</option>
+
+    <option value="338">guinea pig, Cavia cobaya</option>
+
+    <option value="339">sorrel</option>
+
+    <option value="340">zebra</option>
+
+    <option value="341">hog, pig, grunter, squealer, Sus scrofa</option>
+
+    <option value="342">wild boar, boar, Sus scrofa</option>
+
+    <option value="343">warthog</option>
+
+    <option value="344">hippopotamus, hippo, river horse, Hippopotamus amphibius</option>
+
+    <option value="345">ox</option>
+
+    <option value="346">water buffalo, water ox, Asiatic buffalo, Bubalus bubalis</option>
+
+    <option value="347">bison</option>
+
+    <option value="348">ram, tup</option>
+
+    <option value="349">bighorn, bighorn sheep, cimarron, Rocky Mountain bighorn, Rocky Mountain sheep, Ovis canadensis</option>
+
+    <option value="350">ibex, Capra ibex</option>
+
+    <option value="351">hartebeest</option>
+
+    <option value="352">impala, Aepyceros melampus</option>
+
+    <option value="353">gazelle</option>
+
+    <option value="354">Arabian camel, dromedary, Camelus dromedarius</option>
+
+    <option value="355">llama</option>
+
+    <option value="356">weasel</option>
+
+    <option value="357">mink</option>
+
+    <option value="358">polecat, fitch, foulmart, foumart, Mustela putorius</option>
+
+    <option value="359">black-footed ferret, ferret, Mustela nigripes</option>
+
+    <option value="360">otter</option>
+
+    <option value="361">skunk, polecat, wood pussy</option>
+
+    <option value="362">badger</option>
+
+    <option value="363">armadillo</option>
+
+    <option value="364">three-toed sloth, ai, Bradypus tridactylus</option>
+
+    <option value="365">orangutan, orang, orangutang, Pongo pygmaeus</option>
+
+    <option value="366">gorilla, Gorilla gorilla</option>
+
+    <option value="367">chimpanzee, chimp, Pan troglodytes</option>
+
+    <option value="368">gibbon, Hylobates lar</option>
+
+    <option value="369">siamang, Hylobates syndactylus, Symphalangus syndactylus</option>
+
+    <option value="370">guenon, guenon monkey</option>
+
+    <option value="371">patas, hussar monkey, Erythrocebus patas</option>
+
+    <option value="372">baboon</option>
+
+    <option value="373">macaque</option>
+
+    <option value="374">langur</option>
+
+    <option value="375">colobus, colobus monkey</option>
+
+    <option value="376">proboscis monkey, Nasalis larvatus</option>
+
+    <option value="377">marmoset</option>
+
+    <option value="378">capuchin, ringtail, Cebus capucinus</option>
+
+    <option value="379">howler monkey, howler</option>
+
+    <option value="380">titi, titi monkey</option>
+
+    <option value="381">spider monkey, Ateles geoffroyi</option>
+
+    <option value="382">squirrel monkey, Saimiri sciureus</option>
+
+    <option value="383">Madagascar cat, ring-tailed lemur, Lemur catta</option>
+
+    <option value="384">indri, indris, Indri indri, Indri brevicaudatus</option>
+
+    <option value="385">Indian elephant, Elephas maximus</option>
+
+    <option value="386">African elephant, Loxodonta africana</option>
+
+    <option value="387">lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens</option>
+
+    <option value="388">giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca</option>
+
+    <option value="389">barracouta, snoek</option>
+
+    <option value="390">eel</option>
+
+    <option value="391">coho, cohoe, coho salmon, blue jack, silver salmon, Oncorhynchus kisutch</option>
+
+    <option value="392">rock beauty, Holocanthus tricolor</option>
+
+    <option value="393">anemone fish</option>
+
+    <option value="394">sturgeon</option>
+
+    <option value="395">gar, garfish, garpike, billfish, Lepisosteus osseus</option>
+
+    <option value="396">lionfish</option>
+
+    <option value="397">puffer, pufferfish, blowfish, globefish</option>
+
+    <option value="398">abacus</option>
+
+    <option value="399">abaya</option>
+
+    <option value="400">academic gown, academic robe, judge's robe</option>
+
+    <option value="401">accordion, piano accordion, squeeze box</option>
+
+    <option value="402">acoustic guitar</option>
+
+    <option value="403">aircraft carrier, carrier, flattop, attack aircraft carrier</option>
+
+    <option value="404">airliner</option>
+
+    <option value="405">airship, dirigible</option>
+
+    <option value="406">altar</option>
+
+    <option value="407">ambulance</option>
+
+    <option value="408">amphibian, amphibious vehicle</option>
+
+    <option value="409">analog clock</option>
+
+    <option value="410">apiary, bee house</option>
+
+    <option value="411">apron</option>
+
+    <option value="412">ashcan, trash can, garbage can, wastebin, ash bin, ash-bin, ashbin, dustbin, trash barrel, trash bin</option>
+
+    <option value="413">assault rifle, assault gun</option>
+
+    <option value="414">backpack, back pack, knapsack, packsack, rucksack, haversack</option>
+
+    <option value="415">bakery, bakeshop, bakehouse</option>
+
+    <option value="416">balance beam, beam</option>
+
+    <option value="417">balloon</option>
+
+    <option value="418">ballpoint, ballpoint pen, ballpen, Biro</option>
+
+    <option value="419">Band Aid</option>
+
+    <option value="420">banjo</option>
+
+    <option value="421">bannister, banister, balustrade, balusters, handrail</option>
+
+    <option value="422">barbell</option>
+
+    <option value="423">barber chair</option>
+
+    <option value="424">barbershop</option>
+
+    <option value="425">barn</option>
+
+    <option value="426">barometer</option>
+
+    <option value="427">barrel, cask</option>
+
+    <option value="428">barrow, garden cart, lawn cart, wheelbarrow</option>
+
+    <option value="429">baseball</option>
+
+    <option value="430">basketball</option>
+
+    <option value="431">bassinet</option>
+
+    <option value="432">bassoon</option>
+
+    <option value="433">bathing cap, swimming cap</option>
+
+    <option value="434">bath towel</option>
+
+    <option value="435">bathtub, bathing tub, bath, tub</option>
+
+    <option value="436">beach wagon, station wagon, wagon, estate car, beach waggon, station waggon, waggon</option>
+
+    <option value="437">beacon, lighthouse, beacon light, pharos</option>
+
+    <option value="438">beaker</option>
+
+    <option value="439">bearskin, busby, shako</option>
+
+    <option value="440">beer bottle</option>
+
+    <option value="441">beer glass</option>
+
+    <option value="442">bell cote, bell cot</option>
+
+    <option value="443">bib</option>
+
+    <option value="444">bicycle-built-for-two, tandem bicycle, tandem</option>
+
+    <option value="445">bikini, two-piece</option>
+
+    <option value="446">binder, ring-binder</option>
+
+    <option value="447">binoculars, field glasses, opera glasses</option>
+
+    <option value="448">birdhouse</option>
+
+    <option value="449">boathouse</option>
+
+    <option value="450">bobsled, bobsleigh, bob</option>
+
+    <option value="451">bolo tie, bolo, bola tie, bola</option>
+
+    <option value="452">bonnet, poke bonnet</option>
+
+    <option value="453">bookcase</option>
+
+    <option value="454">bookshop, bookstore, bookstall</option>
+
+    <option value="455">bottlecap</option>
+
+    <option value="456">bow</option>
+
+    <option value="457">bow tie, bow-tie, bowtie</option>
+
+    <option value="458">brass, memorial tablet, plaque</option>
+
+    <option value="459">brassiere, bra, bandeau</option>
+
+    <option value="460">breakwater, groin, groyne, mole, bulwark, seawall, jetty</option>
+
+    <option value="461">breastplate, aegis, egis</option>
+
+    <option value="462">broom</option>
+
+    <option value="463">bucket, pail</option>
+
+    <option value="464">buckle</option>
+
+    <option value="465">bulletproof vest</option>
+
+    <option value="466">bullet train, bullet</option>
+
+    <option value="467">butcher shop, meat market</option>
+
+    <option value="468">cab, hack, taxi, taxicab</option>
+
+    <option value="469">caldron, cauldron</option>
+
+    <option value="470">candle, taper, wax light</option>
+
+    <option value="471">cannon</option>
+
+    <option value="472">canoe</option>
+
+    <option value="473">can opener, tin opener</option>
+
+    <option value="474">cardigan</option>
+
+    <option value="475">car mirror</option>
+
+    <option value="476">carousel, carrousel, merry-go-round, roundabout, whirligig</option>
+
+    <option value="477">carpenter's kit, tool kit</option>
+
+    <option value="478">carton</option>
+
+    <option value="479">car wheel</option>
+
+    <option value="480">cash machine, cash dispenser, automated teller machine, automatic teller machine, automated teller, automatic teller, ATM</option>
+
+    <option value="481">cassette</option>
+
+    <option value="482">cassette player</option>
+
+    <option value="483">castle</option>
+
+    <option value="484">catamaran</option>
+
+    <option value="485">CD player</option>
+
+    <option value="486">cello, violoncello</option>
+
+    <option value="487">cellular telephone, cellular phone, cellphone, cell, mobile phone</option>
+
+    <option value="488">chain</option>
+
+    <option value="489">chainlink fence</option>
+
+    <option value="490">chain mail, ring mail, mail, chain armor, chain armour, ring armor, ring armour</option>
+
+    <option value="491">chain saw, chainsaw</option>
+
+    <option value="492">chest</option>
+
+    <option value="493">chiffonier, commode</option>
+
+    <option value="494">chime, bell, gong</option>
+
+    <option value="495">china cabinet, china closet</option>
+
+    <option value="496">Christmas stocking</option>
+
+    <option value="497">church, church building</option>
+
+    <option value="498">cinema, movie theater, movie theatre, movie house, picture palace</option>
+
+    <option value="499">cleaver, meat cleaver, chopper</option>
+
+    <option value="500">cliff dwelling</option>
+
+    <option value="501">cloak</option>
+
+    <option value="502">clog, geta, patten, sabot</option>
+
+    <option value="503">cocktail shaker</option>
+
+    <option value="504">coffee mug</option>
+
+    <option value="505">coffeepot</option>
+
+    <option value="506">coil, spiral, volute, whorl, helix</option>
+
+    <option value="507">combination lock</option>
+
+    <option value="508">computer keyboard, keypad</option>
+
+    <option value="509">confectionery, confectionary, candy store</option>
+
+    <option value="510">container ship, containership, container vessel</option>
+
+    <option value="511">convertible</option>
+
+    <option value="512">corkscrew, bottle screw</option>
+
+    <option value="513">cornet, horn, trumpet, trump</option>
+
+    <option value="514">cowboy boot</option>
+
+    <option value="515">cowboy hat, ten-gallon hat</option>
+
+    <option value="516">cradle</option>
+
+    <option value="517">crane</option>
+
+    <option value="518">crash helmet</option>
+
+    <option value="519">crate</option>
+
+    <option value="520">crib, cot</option>
+
+    <option value="521">Crock Pot</option>
+
+    <option value="522">croquet ball</option>
+
+    <option value="523">crutch</option>
+
+    <option value="524">cuirass</option>
+
+    <option value="525">dam, dike, dyke</option>
+
+    <option value="526">desk</option>
+
+    <option value="527">desktop computer</option>
+
+    <option value="528">dial telephone, dial phone</option>
+
+    <option value="529">diaper, nappy, napkin</option>
+
+    <option value="530">digital clock</option>
+
+    <option value="531">digital watch</option>
+
+    <option value="532">dining table, board</option>
+
+    <option value="533">dishrag, dishcloth</option>
+
+    <option value="534">dishwasher, dish washer, dishwashing machine</option>
+
+    <option value="535">disk brake, disc brake</option>
+
+    <option value="536">dock, dockage, docking facility</option>
+
+    <option value="537">dogsled, dog sled, dog sleigh</option>
+
+    <option value="538">dome</option>
+
+    <option value="539">doormat, welcome mat</option>
+
+    <option value="540">drilling platform, offshore rig</option>
+
+    <option value="541">drum, membranophone, tympan</option>
+
+    <option value="542">drumstick</option>
+
+    <option value="543">dumbbell</option>
+
+    <option value="544">Dutch oven</option>
+
+    <option value="545">electric fan, blower</option>
+
+    <option value="546">electric guitar</option>
+
+    <option value="547">electric locomotive</option>
+
+    <option value="548">entertainment center</option>
+
+    <option value="549">envelope</option>
+
+    <option value="550">espresso maker</option>
+
+    <option value="551">face powder</option>
+
+    <option value="552">feather boa, boa</option>
+
+    <option value="553">file, file cabinet, filing cabinet</option>
+
+    <option value="554">fireboat</option>
+
+    <option value="555">fire engine, fire truck</option>
+
+    <option value="556">fire screen, fireguard</option>
+
+    <option value="557">flagpole, flagstaff</option>
+
+    <option value="558">flute, transverse flute</option>
+
+    <option value="559">folding chair</option>
+
+    <option value="560">football helmet</option>
+
+    <option value="561">forklift</option>
+
+    <option value="562">fountain</option>
+
+    <option value="563">fountain pen</option>
+
+    <option value="564">four-poster</option>
+
+    <option value="565">freight car</option>
+
+    <option value="566">French horn, horn</option>
+
+    <option value="567">frying pan, frypan, skillet</option>
+
+    <option value="568">fur coat</option>
+
+    <option value="569">garbage truck, dustcart</option>
+
+    <option value="570">gasmask, respirator, gas helmet</option>
+
+    <option value="571">gas pump, gasoline pump, petrol pump, island dispenser</option>
+
+    <option value="572">goblet</option>
+
+    <option value="573">go-kart</option>
+
+    <option value="574">golf ball</option>
+
+    <option value="575">golfcart, golf cart</option>
+
+    <option value="576">gondola</option>
+
+    <option value="577">gong, tam-tam</option>
+
+    <option value="578">gown</option>
+
+    <option value="579">grand piano, grand</option>
+
+    <option value="580">greenhouse, nursery, glasshouse</option>
+
+    <option value="581">grille, radiator grille</option>
+
+    <option value="582">grocery store, grocery, food market, market</option>
+
+    <option value="583">guillotine</option>
+
+    <option value="584">hair slide</option>
+
+    <option value="585">hair spray</option>
+
+    <option value="586">half track</option>
+
+    <option value="587">hammer</option>
+
+    <option value="588">hamper</option>
+
+    <option value="589">hand blower, blow dryer, blow drier, hair dryer, hair drier</option>
+
+    <option value="590">hand-held computer, hand-held microcomputer</option>
+
+    <option value="591">handkerchief, hankie, hanky, hankey</option>
+
+    <option value="592">hard disc, hard disk, fixed disk</option>
+
+    <option value="593">harmonica, mouth organ, harp, mouth harp</option>
+
+    <option value="594">harp</option>
+
+    <option value="595">harvester, reaper</option>
+
+    <option value="596">hatchet</option>
+
+    <option value="597">holster</option>
+
+    <option value="598">home theater, home theatre</option>
+
+    <option value="599">honeycomb</option>
+
+    <option value="600">hook, claw</option>
+
+    <option value="601">hoopskirt, crinoline</option>
+
+    <option value="602">horizontal bar, high bar</option>
+
+    <option value="603">horse cart, horse-cart</option>
+
+    <option value="604">hourglass</option>
+
+    <option value="605">iPod</option>
+
+    <option value="606">iron, smoothing iron</option>
+
+    <option value="607">jack-o'-lantern</option>
+
+    <option value="608">jean, blue jean, denim</option>
+
+    <option value="609">jeep, landrover</option>
+
+    <option value="610">jersey, T-shirt, tee shirt</option>
+
+    <option value="611">jigsaw puzzle</option>
+
+    <option value="612">jinrikisha, ricksha, rickshaw</option>
+
+    <option value="613">joystick</option>
+
+    <option value="614">kimono</option>
+
+    <option value="615">knee pad</option>
+
+    <option value="616">knot</option>
+
+    <option value="617">lab coat, laboratory coat</option>
+
+    <option value="618">ladle</option>
+
+    <option value="619">lampshade, lamp shade</option>
+
+    <option value="620">laptop, laptop computer</option>
+
+    <option value="621">lawn mower, mower</option>
+
+    <option value="622">lens cap, lens cover</option>
+
+    <option value="623">letter opener, paper knife, paperknife</option>
+
+    <option value="624">library</option>
+
+    <option value="625">lifeboat</option>
+
+    <option value="626">lighter, light, igniter, ignitor</option>
+
+    <option value="627">limousine, limo</option>
+
+    <option value="628">liner, ocean liner</option>
+
+    <option value="629">lipstick, lip rouge</option>
+
+    <option value="630">Loafer</option>
+
+    <option value="631">lotion</option>
+
+    <option value="632">loudspeaker, speaker, speaker unit, loudspeaker system, speaker system</option>
+
+    <option value="633">loupe, jeweler's loupe</option>
+
+    <option value="634">lumbermill, sawmill</option>
+
+    <option value="635">magnetic compass</option>
+
+    <option value="636">mailbag, postbag</option>
+
+    <option value="637">mailbox, letter box</option>
+
+    <option value="638">maillot</option>
+
+    <option value="639">maillot, tank suit</option>
+
+    <option value="640">manhole cover</option>
+
+    <option value="641">maraca</option>
+
+    <option value="642">marimba, xylophone</option>
+
+    <option value="643">mask</option>
+
+    <option value="644">matchstick</option>
+
+    <option value="645">maypole</option>
+
+    <option value="646">maze, labyrinth</option>
+
+    <option value="647">measuring cup</option>
+
+    <option value="648">medicine chest, medicine cabinet</option>
+
+    <option value="649">megalith, megalithic structure</option>
+
+    <option value="650">microphone, mike</option>
+
+    <option value="651">microwave, microwave oven</option>
+
+    <option value="652">military uniform</option>
+
+    <option value="653">milk can</option>
+
+    <option value="654">minibus</option>
+
+    <option value="655">miniskirt, mini</option>
+
+    <option value="656">minivan</option>
+
+    <option value="657">missile</option>
+
+    <option value="658">mitten</option>
+
+    <option value="659">mixing bowl</option>
+
+    <option value="660">mobile home, manufactured home</option>
+
+    <option value="661">Model T</option>
+
+    <option value="662">modem</option>
+
+    <option value="663">monastery</option>
+
+    <option value="664">monitor</option>
+
+    <option value="665">moped</option>
+
+    <option value="666">mortar</option>
+
+    <option value="667">mortarboard</option>
+
+    <option value="668">mosque</option>
+
+    <option value="669">mosquito net</option>
+
+    <option value="670">motor scooter, scooter</option>
+
+    <option value="671">mountain bike, all-terrain bike, off-roader</option>
+
+    <option value="672">mountain tent</option>
+
+    <option value="673">mouse, computer mouse</option>
+
+    <option value="674">mousetrap</option>
+
+    <option value="675">moving van</option>
+
+    <option value="676">muzzle</option>
+
+    <option value="677">nail</option>
+
+    <option value="678">neck brace</option>
+
+    <option value="679">necklace</option>
+
+    <option value="680">nipple</option>
+
+    <option value="681">notebook, notebook computer</option>
+
+    <option value="682">obelisk</option>
+
+    <option value="683">oboe, hautboy, hautbois</option>
+
+    <option value="684">ocarina, sweet potato</option>
+
+    <option value="685">odometer, hodometer, mileometer, milometer</option>
+
+    <option value="686">oil filter</option>
+
+    <option value="687">organ, pipe organ</option>
+
+    <option value="688">oscilloscope, scope, cathode-ray oscilloscope, CRO</option>
+
+    <option value="689">overskirt</option>
+
+    <option value="690">oxcart</option>
+
+    <option value="691">oxygen mask</option>
+
+    <option value="692">packet</option>
+
+    <option value="693">paddle, boat paddle</option>
+
+    <option value="694">paddlewheel, paddle wheel</option>
+
+    <option value="695">padlock</option>
+
+    <option value="696">paintbrush</option>
+
+    <option value="697">pajama, pyjama, pj's, jammies</option>
+
+    <option value="698">palace</option>
+
+    <option value="699">panpipe, pandean pipe, syrinx</option>
+
+    <option value="700">paper towel</option>
+
+    <option value="701">parachute, chute</option>
+
+    <option value="702">parallel bars, bars</option>
+
+    <option value="703">park bench</option>
+
+    <option value="704">parking meter</option>
+
+    <option value="705">passenger car, coach, carriage</option>
+
+    <option value="706">patio, terrace</option>
+
+    <option value="707">pay-phone, pay-station</option>
+
+    <option value="708">pedestal, plinth, footstall</option>
+
+    <option value="709">pencil box, pencil case</option>
+
+    <option value="710">pencil sharpener</option>
+
+    <option value="711">perfume, essence</option>
+
+    <option value="712">Petri dish</option>
+
+    <option value="713">photocopier</option>
+
+    <option value="714">pick, plectrum, plectron</option>
+
+    <option value="715">pickelhaube</option>
+
+    <option value="716">picket fence, paling</option>
+
+    <option value="717">pickup, pickup truck</option>
+
+    <option value="718">pier</option>
+
+    <option value="719">piggy bank, penny bank</option>
+
+    <option value="720">pill bottle</option>
+
+    <option value="721">pillow</option>
+
+    <option value="722">ping-pong ball</option>
+
+    <option value="723">pinwheel</option>
+
+    <option value="724">pirate, pirate ship</option>
+
+    <option value="725">pitcher, ewer</option>
+
+    <option value="726">plane, carpenter's plane, woodworking plane</option>
+
+    <option value="727">planetarium</option>
+
+    <option value="728">plastic bag</option>
+
+    <option value="729">plate rack</option>
+
+    <option value="730">plow, plough</option>
+
+    <option value="731">plunger, plumber's helper</option>
+
+    <option value="732">Polaroid camera, Polaroid Land camera</option>
+
+    <option value="733">pole</option>
+
+    <option value="734">police van, police wagon, paddy wagon, patrol wagon, wagon, black Maria</option>
+
+    <option value="735">poncho</option>
+
+    <option value="736">pool table, billiard table, snooker table</option>
+
+    <option value="737">pop bottle, soda bottle</option>
+
+    <option value="738">pot, flowerpot</option>
+
+    <option value="739">potter's wheel</option>
+
+    <option value="740">power drill</option>
+
+    <option value="741">prayer rug, prayer mat</option>
+
+    <option value="742">printer</option>
+
+    <option value="743">prison, prison house</option>
+
+    <option value="744">projectile, missile</option>
+
+    <option value="745">projector</option>
+
+    <option value="746">puck, hockey puck</option>
+
+    <option value="747">punching bag, punch bag, punching ball, punchball</option>
+
+    <option value="748">purse</option>
+
+    <option value="749">quill, quill pen</option>
+
+    <option value="750">quilt, comforter, comfort, puff</option>
+
+    <option value="751">racer, race car, racing car</option>
+
+    <option value="752">racket, racquet</option>
+
+    <option value="753">radiator</option>
+
+    <option value="754">radio, wireless</option>
+
+    <option value="755">radio telescope, radio reflector</option>
+
+    <option value="756">rain barrel</option>
+
+  </select>
+  <h2 id="title">goldfinch, Carduelis carduelis</h2>
+  <img id="sample1" src="https://drive.google.com/uc?export=view&id=1V8qkf3ySmHtx91UW0j9lXVchYtZMJHry" style="width: 500px; max-width: 100%; height: auto"" />
+  <img id="sample2" src="https://drive.google.com/uc?export=view&id=1a5wwLkuWJ-Q7GmLEXhYNhBqEwnfYy-3N" style="width: 500px; max-width: 100%; height: auto"" />
+  <img id="sample3" src="https://drive.google.com/uc?export=view&id=1hPTlgHftZ4E1MerBdDE_z_QL8illKfCz" style="width: 500px; max-width: 100%; height: auto"" />
 </body>
+</html>
