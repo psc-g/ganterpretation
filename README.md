@@ -4,12 +4,12 @@ You can read more about it in my [paper](https://github.com/psc-g/ganterpretatio
 
 ## Credit attribution
 
-If you tweet things you've generated with this, please use the hashtag #GANterpretation so I can see the awesome things you do!
+If you tweet things you've generated with this, please use the hashtag `#GANterpretation` so I can see the awesome things you do!
 
 To cite this work, please use:
 
 ```
-@article{castro20ganterpretations,
+@inproceedings{castro20ganterpretations,
   author    = {Pablo Samuel Castro},
   title     = {GANterpretations},
   year      = {2020},
