@@ -44,3 +44,5 @@ python src/run_ganterpreter.py --verbose \
   --video_file_name=${VIDEO_FILENAME}.avi \
   --selected_categories=419,419,419,107,617,127,730,3
 ```
+
+You can use [this colab notebook](https://colab.research.google.com/github/psc-g/ganterpretation/blob/master/GANterpretations_(playground_for_inflection_threshold).ipynb) to determine what value to use for `inflection_threshold`.
